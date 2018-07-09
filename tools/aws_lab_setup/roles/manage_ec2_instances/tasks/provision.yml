@@ -21,7 +21,7 @@
       - provision
   when: ec2_vpc_id is defined
 
-- block: 
+- block:
   - name: Create AWS VPC {{ ec2_name_prefix }}-vpc
     ec2_vpc_net:
       name: "{{ ec2_name_prefix }}-vpc"
@@ -52,9 +52,9 @@
           to_port: -1
           from_port: -1
           cidr_ip: 0.0.0.0/0
-        - proto: tcp 
-          to_port: 443 
-          from_port: 443 
+        - proto: tcp
+          to_port: 443
+          from_port: 443
           cidr_ip: 0.0.0.0/0
         - proto: icmp
           to_port: -1
@@ -68,6 +68,11 @@
           to_port: 22
           from_port: 22
           cidr_ip: 0.0.0.0/0
+        - proto: tcp
+          to_port: "{{sibd_port}}"
+          from_port: "{{sibd_port}}"
+          cidr_ip: 0.0.0.0/0
+
       rules_egress:
         - proto: all
           cidr_ip: 0.0.0.0/0
