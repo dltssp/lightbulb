@@ -26,11 +26,10 @@
   notify: restart_sibd
 
 - name: add service to firewalld
-  firewalld:
-    name: shellinaboxd
-    permanent: true
-    state: enabled
-
+  service:
+    name: firewalld
+    state: stopped
+    
 - name: restarting sibd
   service:
     name: shellinaboxd
