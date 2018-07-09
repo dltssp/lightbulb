@@ -38,6 +38,12 @@
   roles:
     - control_node
 
+- name: Install shell-in-a-box
+  hosts: control_nodes
+  become: yes
+  roles:
+    - manage_sibd
+
 - name: Email inventory to students
   hosts: localhost
   connection: local
