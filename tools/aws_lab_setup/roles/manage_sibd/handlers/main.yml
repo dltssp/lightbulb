@@ -1,0 +1,6 @@
+---
+# handlers file for manage_sibd
+- name: restart_sibd
+  service:
+    name: shellinaboxd
+    state: restarted

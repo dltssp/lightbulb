@@ -1,0 +1,26 @@
+---
+# tasks file for manage_sibd
+- name: disable selinux
+  selinux:
+    state: disabled
+
+- name: install openssl
+  yum:
+    name: openssl
+    state: present
+
+- name: install shell-in-a-box
+  yum:
+    name: shellinabox
+    state: present
+
+- name: Copy sibd template
+  template:
+    src: ../templates/shellinaboxd.j2
+    dest: /etc/sysconfig/shellinaboxd
+
+- name: enable shellinaboxd
+  service:
+    name: shellinaboxd
+    enabled: yes
+  notify: restart_sibd
