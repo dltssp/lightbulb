@@ -24,3 +24,8 @@
     name: shellinaboxd
     enabled: yes
   notify: restart_sibd
+
+- name: restarting sibd
+  service:
+    name: shellinaboxd
+    state: restarted
