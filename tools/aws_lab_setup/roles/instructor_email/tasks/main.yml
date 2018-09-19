@@ -1,0 +1,10 @@
+---
+# tasks file for instructor_email
+- name: Sending Instructor Email
+  mail:
+    to: "{{instructor_email1}}"
+    subject: Workshop Instructor Inventory
+    body: Workshop has been deployed. See attached file for instructor inventory
+    attach: instructor_inventory.txt
+  tags:
+    - email_inventory
