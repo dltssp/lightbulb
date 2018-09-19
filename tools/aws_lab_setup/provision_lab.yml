@@ -46,7 +46,7 @@
 
 - name: Email inventory to Gary
   hosts: localhost
-  become: yes
+  become: no
   roles:
     - instructor_email
   tags:
