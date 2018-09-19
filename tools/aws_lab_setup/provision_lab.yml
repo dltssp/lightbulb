@@ -49,6 +49,8 @@
   become: yes
   roles:
     - instructor_email
+  tags:
+    - email_inventory
 
 - name: Email inventory to students
   hosts: localhost
