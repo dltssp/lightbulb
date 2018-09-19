@@ -2,7 +2,7 @@
 # tasks file for instructor_email
 - name: Sending Instructor Email
   mail:
-    to: "{{instructor_email1}}"
+    to: gary.shaffer@dlt.com
     subject: Workshop Instructor Inventory
     body: Workshop has been deployed. See attached file for instructor inventory
     attach: instructor_inventory.txt
