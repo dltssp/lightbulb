@@ -44,6 +44,12 @@
   roles:
     - manage_sibd
 
+- name: Email inventory to {{ instructor_name }}
+  hosts: localhost
+  become: yes
+  roles:
+    - instructor_email
+
 - name: Email inventory to students
   hosts: localhost
   connection: local
