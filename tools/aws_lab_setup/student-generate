@@ -1,4 +1,4 @@
- STUDENTS=1;
+ STUDENTS=2;
  echo "users:" > users.yml &&
  for NUM in $(seq -f "%02g" 1 $STUDENTS); do
    echo "  - name: Student${NUM}" >> users.yml

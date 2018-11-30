@@ -29,7 +29,7 @@
   service:
     name: firewalld
     state: stopped
-    
+
 - name: restarting sibd
   service:
     name: shellinaboxd
