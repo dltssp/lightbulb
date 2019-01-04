@@ -52,21 +52,21 @@
     - always
     - provision
 
-#- name: Generate student inventories
-#  template:
-#    src: instances.txt.j2
-#    dest: ./{{ item.username }}-instances.txt
-#  with_items: "{{ users }}"
-#  tags:
-#    - inventory
-#    - users
-#    - user_accounts
+- name: Generate student inventories
+  template:
+    src: instances.txt.j2
+    dest: ./{{ item.username }}-instances.txt
+  with_items: "{{ users }}"
+  tags:
+    - inventory
+    - users
+    - user_accounts
 
-#- name: Generate instructor inventory
-#  template:
-#    src: instructor_inventory.j2
-#    dest: ./instructor_inventory.txt
-#  tags:
-#    - inventory
-#    - users
+- name: Generate instructor inventory
+  template:
+    src: instructor_inventory.j2
+    dest: ./instructor_inventory.txt
+  tags:
+    - inventory
+    - users
 #    - user_accounts
