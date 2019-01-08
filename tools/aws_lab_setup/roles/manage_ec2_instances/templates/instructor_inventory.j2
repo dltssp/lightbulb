@@ -1,1 +1,7 @@
 [instructor_inventory]
+{% for user in users %}
+["{{ user.username }}"]
+{% for vm in instances.results %}
+{% if item.username in vm.invocation.module_args.instance_tags.Name %}
+{% endif %}
+{% endfor %}

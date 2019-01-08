@@ -31,11 +31,11 @@
   ec2_group:
     name: "{{ec2_security_group}}"
     region: "{{ ec2_region }}"
-    vpc_id: "{{ec2_vpc_id}}"
+    vpc_id: "{{ ec2_vpc_id }}"
     state: absent
   register: delete_sg
   until: delete_sg is not failed
-  retries: 50
+  retries: 10
   when: vpc_net_facts.vpcs|length > 0
 
 - name: Delete subnet for {{ ec2_name_prefix }}-vpc
