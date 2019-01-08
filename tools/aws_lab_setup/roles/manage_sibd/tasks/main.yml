@@ -25,12 +25,9 @@
     enabled: yes
   notify: restart_sibd
 
-- name: add service to firewalld
-  service:
-    name: firewalld
-    state: stopped
-
-- name: restarting sibd
-  service:
-    name: shellinaboxd
-    state: restarted
+- name: add sibd to firewalld
+  firewalld:
+    port: 4100/tcp
+    state: enabled
+    permanent: yes
+    immediate: yes
