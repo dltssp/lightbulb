@@ -155,3 +155,6 @@ To destroy all the EC2 instances after training is complete:
 * During the workshop, it is recommended that you have a second device or printed copy of the student guide.  Previous workshops have demonstrated that unless you've memorized all of it, you'll likely need to refer to the guide, but your laptop will be projecting the slide decks.  Some students will fall behind and you'll need to refer back to other exercises/slides without having to change the projection for the entire class.
 
 **** FROM: Gary L Shaffer Jr:  Don't forget to look at Security Group settings, make sure inbound allows port 4100 (or whatever you set it to) inside of AWS Security Group.
+
+*** ISSUES ***
+1 - look at teardown task. Task fails after 10 retries stating there is a dependency in deleting the EC2 security group
