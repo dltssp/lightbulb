@@ -3,5 +3,7 @@
 ["{{ user.username }}"]
 {% for vm in instances.results %}
 {% if item.username in vm.invocation.module_args.instance_tags.Name %}
+{{ vm.invocation.module_args.instance_tags.Name }} ansible_host={{ vm.tagged_instances[0].public_ip }}
 {% endif %}
+{% endfor %}
 {% endfor %}
