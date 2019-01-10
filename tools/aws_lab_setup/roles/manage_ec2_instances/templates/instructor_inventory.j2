@@ -1,6 +1,6 @@
 [instructor_inventory]
 {% for user in users %}
-["{{ user.username }}"]
+[{{ user.username }}]
 {% for vm in instances.results %}
 {% if user.username in vm.invocation.module_args.instance_tags.Name %}
 {{ vm.invocation.module_args.instance_tags.Name }} ansible_host={{ vm.tagged_instances[0].public_ip }}
